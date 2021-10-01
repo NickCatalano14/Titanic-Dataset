@@ -29,20 +29,65 @@ The Titanic was a great and unexpected disaster in the early 1900’s. The “un
 
 ## Baseline Model
 * Using XGBoost, create a baseline model to be able to compare the impact of the importance of feature engineering and it's impact on model performance.
-* 
+
+### BASELINE MODEL RESULTS [Overfit]
+* Training Score: 94.2%
+* Test Score: 86.6%
+
+### FeatureImportance:
+* Gender: Sex_male / Sex_female
 
 ![image.png](Model_Baseline.JPG)
-![image.png](img_06.png)
-![image.png](img_06.png)
 
+![image.png](Baseline_Model_Results_Classification_Report.JPG)
 
+## Bayesian Optimation - Tuning Hyperparameters to reduce overfitting and target ideal model performance.
 
+* A universe of hyperparameters for tuning is defined in this process and used for all subsiquent model tuning.  The universe of hyperparameters are as follows:
 
+space={'eta' : hp.quniform('eta', 0, .2, 0.001),
+       'gamma': hp.uniform ('gamma', 0, 1),
+       'max_depth': hp.quniform("max_depth", 5, 7, 1),
+       'min_child_weight' : hp.quniform('min_child_weight', 1, 2, 1),
+       'colsample_bytree' : hp.quniform('colsample_bytree', 0.9, 1, 0.05),
+       'reg_alpha' : hp.quniform('reg_alpha', 0, 5, 1),
+       'reg_lambda' : hp.uniform('reg_lambda', 1, 1.15),
+        'n_estimators': hp.quniform("n_estimators", 10, 150, 10),
+        'seed': 0
+    }
+    
+An iterative approach, 700 iterations, is performed to target the ideal tuning parameters.  The following trends shows the models train/test accuracies vs iteration.
 
+![image.png](Bayesian_Opt_Trends.JPG)
 
+However, in order to reduce overfitting, a parameter is defined as the absolute value of the difference between training and test accuracies.  Plotting a criteria of this new parameter less than 0.005 yeilds the following trends:
 
+![image.png](Bayesian_Opt_Trends_Best Model [0.005].JPG)
 
+## Feature Engineering Impact on Model Performance:
+This process was repeated for each instance of feature engineering described above.  One may notice an overall increase in tuned model performance with an increased model evolution.
 
+![image.png](model_performance [0.005].JPG)
+
+* Bin of Family Size: - 1.7% 
+* Family Gender Count: + 2.1%
+
+## SUMMARY: Best Model
+
+### BEST MODEL RESULTS
+* Training Score: 90.68%
+* Test Score: 90.19%
+
+![image.png](Best_Model_Results [0.005].JPG)
+
+### Feature Importance:
+* Gender: name_title_Mr / Pclass_3
+* Engineered features such as “name_title” and “family_size” ranked high in feature importance, yielding 50% of the top 10 important features.
+
+## FUTURE CONSIDERATIONS
+* IncreasecomplexityofBayesian optimization to expand the ”universe” of hyperparameters being tuned and their limits
+* Automatingcolumnselectionto iterate all combinations of columns used and columns to one-hot encode
+* UtilizingGPUpowertosupportmore advanced optimization practices
 
 
 
