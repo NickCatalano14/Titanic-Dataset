@@ -26,3 +26,29 @@ The Titanic was a great and unexpected disaster in the early 1900’s. The “un
 ### FeatureBin:
 * Family Size
 * Age
+
+## Baseline Model
+* Using XGBoost, create a baseline model to be able to compare the impact of the importance of feature engineering and it's impact on model performance.
+* 
+
+![image.png](Model_Baseline.JPG)
+![image.png](img_06.png)
+![image.png](img_06.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
