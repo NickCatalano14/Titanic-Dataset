@@ -68,7 +68,7 @@ However, in order to reduce overfitting, a parameter is defined as the absolute 
 ## Feature Engineering Impact on Model Performance:
 This process was repeated for each instance of feature engineering described above.  One may notice an overall increase in tuned model performance with an increased model evolution.
 
-![image.png](model_performance [0.005].JPG)
+![image.png](https://github.com/NickCatalano14/Titanic-Dataset/blob/43feac233391317d8a209bb4fa943749931b6346/model_performance%20%5B0.005%5D.JPG)
 
 * Bin of Family Size: - 1.7% 
 * Family Gender Count: + 2.1%
@@ -79,7 +79,7 @@ This process was repeated for each instance of feature engineering described abo
 * Training Score: 90.68%
 * Test Score: 90.19%
 
-![image.png](Best_Model_Results [0.005].JPG)
+![image.png](https://github.com/NickCatalano14/Titanic-Dataset/blob/43feac233391317d8a209bb4fa943749931b6346/Best_Model_Results%20%5B0.005%5D.JPG)
 
 ### Feature Importance:
 * Gender: name_title_Mr / Pclass_3
