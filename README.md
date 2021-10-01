@@ -17,13 +17,13 @@ The Titanic was a great and unexpected disaster in the early 1900’s. The “un
 * Bayesian Optimization of tuning parameters to target well fit models with high model scores.
  
  ## Feature Engineering
-### Newfeatures:
+#### Newfeatures:
 * Title of an individual
 * Family Size
 * Fare cost per Person
 * Parent: Mother / Father
 * Family Demographics
-### FeatureBin:
+#### FeatureBin:
 * Family Size
 * Age
 
@@ -45,15 +45,16 @@ The Titanic was a great and unexpected disaster in the early 1900’s. The “un
 
 * A universe of hyperparameters for tuning is defined in this process and used for all subsiquent model tuning.  The universe of hyperparameters are as follows:
 
-space={'eta' : hp.quniform('eta', 0, .2, 0.001),
-       'gamma': hp.uniform ('gamma', 0, 1),
-       'max_depth': hp.quniform("max_depth", 5, 7, 1),
-       'min_child_weight' : hp.quniform('min_child_weight', 1, 2, 1),
-       'colsample_bytree' : hp.quniform('colsample_bytree', 0.9, 1, 0.05),
-       'reg_alpha' : hp.quniform('reg_alpha', 0, 5, 1),
-       'reg_lambda' : hp.uniform('reg_lambda', 1, 1.15),
-        'n_estimators': hp.quniform("n_estimators", 10, 150, 10),
-        'seed': 0
+space={
+* 'eta' : hp.quniform('eta', 0, .2, 0.001),
+*       'gamma': hp.uniform ('gamma', 0, 1),
+*       'max_depth': hp.quniform("max_depth", 5, 7, 1),
+*       'min_child_weight' : hp.quniform('min_child_weight', 1, 2, 1),
+*       'colsample_bytree' : hp.quniform('colsample_bytree', 0.9, 1, 0.05),
+*       'reg_alpha' : hp.quniform('reg_alpha', 0, 5, 1),
+*       'reg_lambda' : hp.uniform('reg_lambda', 1, 1.15),
+*        'n_estimators': hp.quniform("n_estimators", 10, 150, 10),
+*        'seed': 0
     }
     
 An iterative approach, 700 iterations, is performed to target the ideal tuning parameters.  The following trends shows the models train/test accuracies vs iteration.
