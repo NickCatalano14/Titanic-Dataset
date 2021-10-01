@@ -63,7 +63,7 @@ An iterative approach, 700 iterations, is performed to target the ideal tuning p
 
 However, in order to reduce overfitting, a parameter is defined as the absolute value of the difference between training and test accuracies.  Plotting a criteria of this new parameter less than 0.005 yeilds the following trends:
 
-![image.png](Bayesian_Opt_Trends_Best Model [0.005].JPG)
+![image.png](https://github.com/NickCatalano14/Titanic-Dataset/blob/0aedc4fa41f2f1e600b06c873feab61538da1f3b/Bayesian_Opt_Trends_Best%20Model%20%5B0.005%5D.JPG)
 
 ## Feature Engineering Impact on Model Performance:
 This process was repeated for each instance of feature engineering described above.  One may notice an overall increase in tuned model performance with an increased model evolution.
